@@ -13,9 +13,9 @@ class Contact:
 
     def __str__(self):
         s = "{Name: "+self.name
-        if self.phno != None:
+        if self.phno is not None:
             s += ", Phone: "+ self.phno
-        if self.email != None:
+        if self.email is not None:
             s += ", Email: "+ self.email
         s += "}"
         return s
@@ -35,7 +35,7 @@ def addcontact(pb):
     print("Contacts will be stored in the format [Name, Contact number, Email id]")
     print()
     name = input("Enter the name: ")
-    if name == " " or name == "":
+    if name.isspace() or name == "":
         print("Please enter name of the contact")
         return
     phno = input("Enter the phone number: ")
